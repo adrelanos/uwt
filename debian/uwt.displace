@@ -13,3 +13,4 @@
 /usr/bin/wget.anondist
 /usr/bin/yum.anondist
 /usr/bin/yumdownloader.anondist
+/usr/bin/dnf.anondist

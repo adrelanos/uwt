@@ -215,6 +215,7 @@ declare -A -g uwtport
 [ -n "$uwtport" ] || uwtport["/usr/bin/aptitude-curses"]="9124"
 [ -n "$uwtport" ] || uwtport["/usr/bin/yum"]="9125"
 [ -n "$uwtport" ] || uwtport["/usr/bin/yumdownloader"]="9125"
+[ -n "$uwtport" ] || uwtport["/usr/bin/dnf"]="9125"
 
 settings_detection() {
    if [ "$UWT_DEV_PASSTHROUGH" = "1" ]; then
