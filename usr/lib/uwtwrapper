@@ -14,13 +14,13 @@
 ##   upstream to the Debian package faketime. This is to avoid a conflict, when
 ##   the new file timeprivacy gets installed by faketime.
 
-#set -x
+if [ ! "$uwtwrapper_verbose" = "" ]; then
+   if [ "$uwtwrapper_verbose" -ge 1 ]; then
+      set -x
+   fi
+fi
 
 set -e
-set -o pipefail
-set -o errtrace
-
-SCRIPTNAME="$(basename "$BASH_SOURCE")"
 
 error_handler() {
    echo "
@@ -34,6 +34,11 @@ error_handler() {
 }
 
 trap "error_handler" ERR
+
+set -o pipefail
+set -o errtrace
+
+SCRIPTNAME="$(basename "$BASH_SOURCE")"
 
 show_help() {
    echo "\
@@ -243,17 +248,15 @@ alternatives_support
 sanity_tests_general
 settings_detection
 
-[ -n "$bindp_so" ] || bindp_so="/usr/lib/uwt/libindp.so"
-[ -n "$bindp_interface" ] || bindp_interface="eth0"
-[ -n "$bindp_address" ] || bindp_address="$(/sbin/ifconfig "$bindp_interface" | grep -oP 'inet addr:\K\S+')" || true
-[ -n "$bindp_address" ] || bindp_address="127.0.0.1"
-
 if [ "$bindp_dispatch" = "true" ]; then
-   exec \
-      BIND_ADDR="$bindp_address" \
-      LD_PRELOAD="$bindp_so" \
-      "$uwtwrapper_parent.anondist-orig" \
-      ${1+"$@"}
+   [ -n "$bindp_so" ] || bindp_so="/usr/lib/uwt/libindp.so"
+   [ -n "$bindp_interface" ] || bindp_interface="eth0"
+   [ -n "$BIND_ADDR" ] || BIND_ADDR="$(/sbin/ifconfig "$bindp_interface" | grep -oP 'inet addr:\K\S+')" || true
+   [ -n "$BIND_ADDR" ] || BIND_ADDR="127.0.0.1"
+   LD_PRELOAD+=" $bindp_so"
+   export BIND_ADDR
+   export LD_PRELOAD
+   exec "$uwtwrapper_parent.anondist-orig" ${1+"$@"}
 fi
 
 port="${uwtport["$uwtwrapper_parent"]}"
