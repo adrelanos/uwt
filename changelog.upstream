@@ -1,3 +1,22 @@
+commit 97b08939cb39b5fef1dc8fdf9f10860cbe9b2237
+Merge: 7779262 7822489
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Apr 25 05:21:06 2026 -0400
+
+    Merge remote-tracking branch 'ArrayBolt3/arraybolt3/trixie'
+
+commit 78224898cf2168ca28621e5231246291ba376b74
+Author: Aaron Rainbolt <arraybolt3@gmail.com>
+Date:   Fri Apr 24 20:18:26 2026 -0400
+
+    Bash arithmetic hardening
+
+commit 77792625c716abf1b08b6af7f50df4b933d61690
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Mon Feb 23 13:38:34 2026 +0000
+
+    bumped changelog version
+
 commit d3e9dbd7fbe91b7735e36ef032212c3f2edcfda6
 Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Sun Feb 22 09:44:12 2026 -0500
@@ -15,7 +34,7 @@ Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Wed Jan 7 06:04:16 2026 -0500
 
     `curl`, `dnf` (`uwt` wrappers`): implement `torS0X` stream isolation
-    
+
     https://spec.torproject.org/socks-extensions.html
 
 commit df0dc94590ce8bfc2dc8ecde02be1dc647012dfe
@@ -37,7 +56,7 @@ Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Mon Jan 5 03:33:56 2026 -0500
 
     Merge pull request #4 from Nurmagoz/patch-3
-    
+
     Update ricochet.anondist link
 
 commit 03a9e620227b0b0b7ec62ba5bd46543caf8259ee
@@ -46,7 +65,7 @@ Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Mon Jan 5 03:33:32 2026 -0500
 
     Merge pull request #3 from Nurmagoz/patch-2
-    
+
     Update uwt.sh link
 
 commit e7fb8c6e20f3f5bb84da836b8592c7449b200647
@@ -55,7 +74,7 @@ Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Mon Jan 5 03:29:31 2026 -0500
 
     Merge pull request #2 from Nurmagoz/patch-1
-    
+
     Update uwtwrapper Links
 
 commit c2f81f2bd2ea644a4bf5c80c65a581664a6569b1
@@ -453,7 +472,7 @@ Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Sun Dec 8 11:36:01 2024 -0500
 
     disable no longer needed sudoers exception `Defaults:ALL env_keep += "TORSOCKS_LOG_LEVEL"`
-    
+
     https://www.kicksecure.com/wiki/Dev/todo/archived#uwt_torsocks_TORSOCKS_LOG_LEVEL
 
 commit 797725844d4dac40fe2f20c5543fb25db28c3056
@@ -479,7 +498,7 @@ Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Sat Nov 11 13:41:25 2023 -0500
 
     change license to AGPL-3+
-    
+
     https://forums.whonix.org/t/license-change-to-agplv3/17455
 
 commit d02c8d013c22e3fe042d2ee57ece66f835e7bde2
@@ -638,11 +657,11 @@ Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Mon Sep 20 14:32:33 2021 -0400
 
     Added uwt wrapper for `dnf-3`.
-    
+
     For Qubes-Whonix 16 dom0 UpdateVM support.
-    
+
     https://github.com/QubesOS/qubes-issues/issues/6913
-    
+
     https://github.com/QubesOS/qubes-issues/issues/6891#issuecomment-920220943
 
 commit 603b5826374b67afdeead0b972deede4e8dd13b5
@@ -734,7 +753,7 @@ Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Fri Apr 9 07:35:39 2021 -0400
 
     guess, tell user which package needs to be installed
-    
+
     https://forums.whonix.org/t/whonix-workstation-xfce-15-0-1-5-4-sudo-git-uwtwrapper-uwt-wrapper-error-usr-bin-git-anondist-orig-does-not-exist/11399
 
 commit 7e6b623ffaf2d7359774904d1344387c7f746432
@@ -742,7 +761,7 @@ Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Fri Apr 9 07:31:53 2021 -0400
 
     improve output
-    
+
     https://forums.whonix.org/t/whonix-workstation-xfce-15-0-1-5-4-sudo-git-uwtwrapper-uwt-wrapper-error-usr-bin-git-anondist-orig-does-not-exist/11399
 
 commit 413ee2039ab1117d810f9a4bf221a53d06527cde
@@ -1052,18 +1071,18 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Fri Mar 1 14:32:42 2019 +0000
 
     add improved legal protections clauses
-    
+
     The license for software created by Whonix is the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version with additional terms applicable per GNU GPL version 3 section 7.
-    
+
     The additional terms are based on the Doom 3 license which is Debian refers to as `GPL-3+-with-id-software-additional-terms`, which is Debian DFSG [1] (The Debian Free Software Guidelines) approved and which is therefore suitable for Debian `main`. Whonix made applied minimal changes to it:
-    
+
     * Rewrite `The Doom 3 BFG Edition GPL Source Code` to the more common `this program` which is used throughout the GPL.
     * Added a "trump clause" [2], in other words, any conflicts or disputes between the additional terms and the GPLv3 shall be resolved in favor of the GPLv3 by adding `Notwithstanding any other provision of this License` (as mentioned in GPL FAQ [3]) at the beginning of the additional terms.
-    
+
     [1] https://www.debian.org/social_contract#guidelines
     [2] https://www.fsf.org/news/canonical-updated-licensing-terms
     [3] https://www.gnu.org/licenses/gpl-faq.html#v3Notwithstanding
-    
+
     For more considerations, see also:
     https://www.whonix.org/wiki/Dev/Licensing
 
@@ -1090,7 +1109,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Sat Jan 12 01:22:14 2019 -0500
 
     magic-wormhole support
-    
+
     https://phabricator.whonix.org/T771
 
 commit e76e159cefcabdf62257422f6b268becdb8c2189
@@ -1146,9 +1165,9 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Fri Jun 22 02:17:52 2018 +0000
 
     cosmetic, store /usr/lib/uwtexec in variable uwtexec_bin rather than hardcoding it
-    
+
     https://github.com/Whonix/uwt/pull/6
-    
+
     https://phabricator.whonix.org/T797
 
 commit 5d256caa490a7449d1cc50378ac4a06d08c0e873
@@ -1168,9 +1187,9 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Fri Jun 22 02:08:12 2018 +0000
 
     quotes
-    
+
     https://github.com/Whonix/uwt/pull/6
-    
+
     https://phabricator.whonix.org/T797
 
 commit 6a9ae340cf634825ee35521c5548e040c65e8447
@@ -1186,7 +1205,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Fri Jun 22 10:03:58 2018 +0800
 
     Merge pull request #6 from yzxd/master
-    
+
     Preserve zeroth argument when executing scripts with multiple wrappers
 
 commit 4003bb068971adf11932b7a4f96beb366df36b7a
@@ -1262,7 +1281,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Tue Jun 5 17:22:24 2018 +0200
 
     Merge pull request #5 from yzxd/master
-    
+
     Fix issue with symbolic links to binaries
 
 commit 03cc4c8568564d5993fcc8ea975cf00e851f7052
@@ -1270,9 +1289,9 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Tue Jun 5 17:09:52 2018 +0200
 
     uwt: add apt and apt-file
-    
+
     Thanks to @starius for the bug report!
-    
+
     https://github.com/QubesOS/qubes-issues/issues/3882
 
 commit 164701d072851a62ccee44986e53dddc838ed972
@@ -1295,11 +1314,11 @@ Date:   Wed May 9 09:46:59 2018 +0000
     on the TOR_CONTROL_HOST and TOR_CONTROL_PORT environment variables being
     set. Otherwise it would try to start its own Tor instance.
     https://phabricator.whonix.org/T444
-    
+
     set environment variables required for ricochet
-    
+
     Thanks to @Tibo for providing the problem solution!
-    
+
     https://phabricator.whonix.org/T444
 
 commit 4d6ab4fe4b9b28a85f164c2038775fecf4f4721f
@@ -1415,7 +1434,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Mon Feb 13 17:45:08 2017 +0000
 
     remove bindp, moved to its own bindp package
-    
+
     https://phabricator.whonix.org/T561
 
 commit dd3bdbc8a5dda374f88317a773eb7dd8068a7a3a
@@ -1429,7 +1448,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Fri Feb 10 15:47:52 2017 +0000
 
     remove faketime from Build-Depends:
-    
+
     since no longer used for reproducible builds
 
 commit dcb46f5cdfe6ccdaf28d1bd35234a24e73fe3bef
@@ -1500,7 +1519,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Jan 18 09:07:00 2017 +0000
 
     abolish /usr/bin/uwt thanks to TORSOCKS_ISOLATE_PID
-    
+
     https://phabricator.whonix.org/T356
 
 commit b7d4101af1c7d8c95872b03abb52c0a2bbcda87f
@@ -1514,7 +1533,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Jan 18 08:43:55 2017 +0000
 
     /etc/tor/torsocks.conf AllowOutboundLocalhost 1
-    
+
     https://phabricator.whonix.org/T357
 
 commit c2f471d97573680bf00992ac775296da0fe9ac35
@@ -1522,7 +1541,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Jan 18 08:42:31 2017 +0000
 
     enable /etc/tor/torsocks.conf IsolatePID 1
-    
+
     https://phabricator.whonix.org/T356
 
 commit d1a64bd9a6016ee527b127b380676f97aa1d53ca
@@ -1530,7 +1549,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Jan 18 08:41:11 2017 +0000
 
     add original /etc/tor/torsocks.conf and config-package-dev displace it
-    
+
     from /etc/tor/torsocks.conf.anondist
 
 commit 174f593e3491ec3e36d8e511550cd0da62788f42
@@ -1580,7 +1599,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Tue Jan 10 15:43:30 2017 +0000
 
     ricochet lintian warning fix
-    
+
     https://phabricator.whonix.org/T444
 
 commit 2a516b92849f3dd55c0d5cec6a01510f13268c33
@@ -1588,7 +1607,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Tue Jan 10 15:40:16 2017 +0000
 
     add ricochet to bindp
-    
+
     https://phabricator.whonix.org/T444
 
 commit f3688a6813abe82597399da5bf05f0bca7771ff8
@@ -1619,7 +1638,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Oct 12 20:52:04 2016 +0000
 
     add uwt settings info tool
-    
+
     https://phabricator.whonix.org/T73
 
 commit dd06acbb467a0297c40dc22a61ef0d4e8d0d3006
@@ -1645,7 +1664,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Thu Apr 28 02:59:27 2016 +0000
 
     sane defaults even without config files
-    
+
     https://phabricator.whonix.org/T286
     https://phabricator.whonix.org/T503
 
@@ -1678,7 +1697,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Fri Dec 11 10:47:36 2015 +0000
 
     Fix, make '/usr/lib/uwtwrapper --help' only work when manually run without env.
-    
+
     Only use the command line parser if $uwtwrapper_parent is empty. I.e. when
     manually called from command line instead by a wrapper. Otherwise it would
     interfere with the forwarded options to application. I.e. for example
@@ -1695,9 +1714,9 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Thu Dec 10 17:30:46 2015 +0000
 
     fixed aptitude uwt wrapper
-    
+
     Thanks to rAntOCauDgb for the report!
-    
+
     https://forums.whonix.org/t/aptitude-update-fails-most-of-the-time-on-whonix-gateway-only-it-turns-out
 
 commit 9a3c180d674183edf13e662e8b930820d88ba574
@@ -1730,9 +1749,9 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Mon Nov 30 19:47:06 2015 +0000
 
     Only source configuration files that end with the '.conf' extension.
-    
+
     Thanks to @nrgaway for the suggestion!
-    
+
     https://phabricator.whonix.org/T286
 
 commit 68c4bcb06ea226962f99ab310a5f4b515076b0ab
@@ -2257,7 +2276,7 @@ Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Tue Jun 10 15:59:44 2014 +0000
 
     Revert "added "local = 11.150.128.0/255.255.192.0" to be able to switch Whonix's internal IPs"
-    
+
     This reverts commit a36e86e6c22eecc30c412a3b3afd659dd555169e.
 
 commit b68dab1ccac543b95f01513a6ec6e2ad74b0f9ed
