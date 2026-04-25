@@ -65,6 +65,8 @@ true "$0: START"
 
 set -e
 
+source /usr/libexec/helper-scripts/strings.bsh
+
 error_handler() {
    echo "
 ## uwtwrapper BUG.
@@ -174,7 +176,7 @@ parse_cmd() {
 
 nested_protection() {
    [ -n "$uwtwrapper_max" ] || uwtwrapper_max=10
-   [ -n "$uwtwrapper_counter" ] || uwtwrapper_counter=0
+   is_whole_number "$uwtwrapper_counter" || uwtwrapper_counter=0
    uwtwrapper_counter=$(( uwtwrapper_counter + 1 ))
    export uwtwrapper_counter
    if [ "$uwtwrapper_counter" -ge "$uwtwrapper_max" ]; then

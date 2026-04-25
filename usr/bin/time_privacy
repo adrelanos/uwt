@@ -10,34 +10,13 @@
 ## Undocumented.
 #### meta end
 
-## Copyright (c) 2013, adrelanos@whonix.org
-## All rights reserved.
-##
-## Redistribution and use in source and binary forms, with or without
-## modification, are permitted provided that the following conditions are met:
-##
-## 1. Redistributions of source code must retain the above copyright notice, this
-## list of conditions and the following disclaimer.
-## 2. Redistributions in binary form must reproduce the above copyright notice,
-## this list of conditions and the following disclaimer in the documentation
-## and/or other materials provided with the distribution.
-##
-## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-## ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-## WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-## DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
-## ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-## (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-## LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-## ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-## SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 #set -x
 set -o errexit
 set -o nounset
 set -o errtrace
 set -o pipefail
+
+source /usr/libexec/helper-scripts/strings.bsh
 
 SCRIPTNAME="$(basename "$BASH_SOURCE")"
 
@@ -113,12 +92,11 @@ if [ "$_randomincrement" = "none" ]; then
       _increment="1"
    fi
 elif [ "$_increment" = "none" ]; then
-   if [ "$_randomincrement" = "" ]; then
+   if ! is_whole_number "$_randomincrement"; then
       printf '%s\n' "randomincrement must be a positive number."
       exit 1
    else
-      ## random number between 1 and $_randomincrement
-      random_number="$(( 0+($(od -An -N2 -i /dev/random) )%($_randomincrement-0+1) ))"
+      random_number="$(/usr/libexec/helper-scripts/random-between 1 "$_randomincrement")"
       _increment="$random_number"
    fi
 else
@@ -130,39 +108,23 @@ if [ -z "${TIMEDIR-}" ]; then
    TIMEDIR=~/.timeprivacy
 fi
 
-nodigits="$(printf '%s\n' $_increment | sed 's/[[:digit:]]//g')"
-if [ ! -z "$nodigits" ]; then
+if ! is_whole_number "$_increment"; then
    printf '%s\n' "increment is not a digit."
    exit 1
 fi
 
-nodigits="$(printf '%s\n' "$_year" | sed 's/[[:digit:]]//g')"
-if [ ! -z "$nodigits" ]; then
-   printf '%s\n' "_day is not a digit."
-   exit 1
-fi
-
-nodigits="$(printf '%s\n' "$_year" | sed 's/[[:digit:]]//g')"
-if [ ! -z "$nodigits" ]; then
+if ! is_whole_number "$_year"; then
    printf '%s\n' "year is not a digit."
    exit 1
 fi
 
-nodigits="$(printf '%s\n' "$_month" | sed 's/[[:digit:]]//g')"
-if [ ! -z "$nodigits" ]; then
+if ! is_whole_number "$_month"; then
    printf '%s\n' "month is not a digit."
    exit 1
 fi
 
-nodigits="$(printf '%s\n' "$_day" | sed 's/[[:digit:]]//g')"
-if [ ! -z "$nodigits" ]; then
+if ! is_whole_number "$_day"; then
    printf '%s\n' "day is not a digit."
-   exit 1
-fi
-
-nodigits="$(printf '%s\n' $_increment | sed 's/[[:digit:]]//g')"
-if [ ! -z "$nodigits" ]; then
-   printf '%s\n' "increment is not a digit."
    exit 1
 fi
 
