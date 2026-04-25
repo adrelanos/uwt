@@ -15,7 +15,7 @@ Rules-Requires-Root: no
 
 Package: uwt
 Architecture: all
-Depends: torsocks, faketime, bindp, net-tools, ${misc:Depends}
+Depends: torsocks, faketime, bindp, net-tools, helper-scripts, ${misc:Depends}
 Provides: ${diverted-files}
 Conflicts: ${diverted-files}
 Description: Use Applications over Tor with Stream Isolation and Time Privacy
