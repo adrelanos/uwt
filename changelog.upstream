@@ -1,3 +1,9 @@
+commit 830144b342b74bac41f51cc790009a9dd8aaa262
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Apr 25 09:29:51 2026 +0000
+
+    bumped changelog version
+
 commit 97b08939cb39b5fef1dc8fdf9f10860cbe9b2237
 Merge: 7779262 7822489
 Author: Patrick Schleizer <adrelanos@whonix.org>
